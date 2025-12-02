@@ -1,0 +1,40 @@
+<script>
+  let { data } = $props();
+</script>
+
+<section class="mt-3">
+  <h1 class="tw-page-title">Play</h1>
+  <p class="tw-page-subtitle">
+    Choose what you want to practice in Tibby’s World.
+  </p>
+
+  <div class="row mt-4">
+    <div class="col-sm-6 mb-3">
+      <a href="/play/alphabets" class="text-decoration-none tw-card-link">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h4 card-title">Alphabets</h2>
+            <p class="card-text">
+              Learn the Tibetan consonants with pronunciation and order.
+            </p>
+            <span class="tw-game-btn tw-game-btn-small">Go!</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-6 mb-3">
+      <a href="/play/vowels" class="text-decoration-none tw-card-link">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h4 card-title">Vowels</h2>
+            <p class="card-text">
+              Practice the Tibetan vowel signs using ཨ (a) as base.
+            </p>
+            <span class="tw-game-btn tw-game-btn-small">Go!</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

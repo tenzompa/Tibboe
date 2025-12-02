@@ -1,0 +1,49 @@
+import db from "$lib/db.js";
+import { fail, redirect } from "@sveltejs/kit";
+
+export async function load({ locals }) {
+  if (locals.user) {
+    throw redirect(302, "/");
+  }
+  return {};
+}
+
+export const actions = {
+  default: async ({ request, cookies }) => {
+    const data = await request.formData();
+    const email = data.get("email")?.toString().trim();
+    const password = data.get("password")?.toString();
+    const confirm = data.get("confirm")?.toString();
+
+    if (!email || !password || !confirm) {
+      return fail(400, { error: "Please fill in all fields.", email });
+    }
+
+    if (password !== confirm) {
+      return fail(400, { error: "Passwords do not match.", email });
+    }
+
+    if (password.length < 6) {
+      return fail(400, { error: "Password must be at least 6 characters.", email });
+    }
+
+    try {
+      const userId = await db.createUser(email, password);
+
+      // set a simple userId cookie (session)
+      cookies.set("userId", userId, {
+        path: "/",
+        httpOnly: true,
+        sameSite: "lax",
+        secure: false // true in production with HTTPS
+      });
+
+      throw redirect(303, "/");
+    } catch (err) {
+      return fail(400, {
+        error: err.message || "Could not create account.",
+        email
+      });
+    }
+  }
+};

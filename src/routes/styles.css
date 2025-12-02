@@ -1,0 +1,89 @@
+body {
+    background-color: #ffffff;
+    color: black;
+}
+
+.home-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 30px;
+  gap: 20px; /* adds spacing between elements */
+}
+
+/* Flex container for Tibby image */
+.tibby-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Smaller Tibby image */
+.tibby-hero {
+  width: 180px;   /* smaller size */
+  max-width: 60%; /* prevents overflow on small screens */
+  height: auto;
+}
+
+.tw-game-btn {
+  display: inline-block; /* so centering works */
+}
+
+.tw-game-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #64AB71;  /* your new color */
+  border-radius: 14px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff; /* stays readable */
+  text-decoration: none;
+
+  /* slightly darker green for depth */
+  box-shadow: 0 6px 0 #2d4a32, 0 8px 15px rgba(0, 0, 0, 0.25);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tw-game-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 0 #4b8656, 0 12px 18px rgba(0, 0, 0, 0.25);
+}
+
+.tw-game-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #4b8656;
+}
+
+/* Small version of the game button */
+.tw-game-btn-small {
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+.navbar-color {
+  background-color: #240D70; 
+}
+
+.about-page {
+  max-width: 960px;
+}
+
+.about-tibby-img {
+  width: 180px;
+  max-width: 70%;
+  height: auto;
+}
+
+.about-card {
+  border-radius: 14px;
+}
+
+.about-footer-note {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+}
