@@ -14,7 +14,7 @@ body {
 }
 
 /* Flex container for Tibby image */
-.tibby-wrapper {
+.tibboe-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@ body {
 }
 
 /* Smaller Tibby image */
-.tibby-hero {
+.tibboe-hero {
   width: 180px;   /* smaller size */
   max-width: 60%; /* prevents overflow on small screens */
   height: auto;
