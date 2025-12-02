@@ -41,13 +41,12 @@
       </p>
     </div>
 
-    <div class="col-md-6 d-flex justify-content-center align-items-center">
-      <div class="tibboe-wrapper">
-        <img
-          src="/tibboehappy.png"
-          alt="Tibboe happy"
-        />
-      </div>
+    <div class="col-md-6 text-center">
+      <img
+        src="/tibby.png"
+        alt="Tibby the dancing yak"
+        class="about-tibby-img"
+      />
     </div>
   </div>
 
