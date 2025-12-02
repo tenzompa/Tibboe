@@ -13,7 +13,7 @@ body {
   gap: 20px; /* adds spacing between elements */
 }
 
-/* Flex container for Tibby image */
+/* Flex container for Tibboe image */
 .tibboe-wrapper {
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@ body {
   width: 100%;
 }
 
-/* Smaller Tibby image */
+/* Smaller Tibboe image */
 .tibboe-hero {
   width: 180px;   /* smaller size */
   max-width: 60%; /* prevents overflow on small screens */
@@ -73,7 +73,7 @@ body {
   max-width: 960px;
 }
 
-.about-tibby-img {
+.about-tibboe-img {
   width: 180px;
   max-width: 70%;
   height: auto;
