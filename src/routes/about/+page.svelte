@@ -43,8 +43,8 @@
 
     <div class="col-md-6 text-center">
       <img
-        src="/tibby.png"
-        alt="Tibby the dancing yak"
+        src="/tibboe.png"
+        alt="Tibboe the yak"
         class="about-tibby-img"
       />
     </div>
