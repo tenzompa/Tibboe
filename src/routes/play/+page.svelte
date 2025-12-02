@@ -5,7 +5,7 @@
 <section class="mt-3">
   <h1 class="tw-page-title">Play</h1>
   <p class="tw-page-subtitle">
-    Choose what you want to practice in Tibby’s World.
+    Choose what you want to practice with Tibboe.
   </p>
 
   <div class="row mt-4">

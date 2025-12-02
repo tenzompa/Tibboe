@@ -1,9 +1,9 @@
 <div class="home-center">
-  <h1>Tibby’s World</h1>
+  <h1>Explore with Tibboe</h1>
   <p>Learn Tibetan with fun and curiosity</p>
 
-  <div class="tibby-wrapper">
-    <img src="/tibbyhappy.png" alt="Tibby the Yak" class="tibby-hero" />
+  <div class="tibboe-wrapper">
+    <img src="/tibboehappy.png" alt="Tibboe the Yak" class="tibboe-hero" />
   </div>
 
   <a href="/play" class="tw-game-btn">

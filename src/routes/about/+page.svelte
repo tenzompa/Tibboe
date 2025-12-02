@@ -2,7 +2,7 @@
   const pillars = [
     {
       title: "Playful Learning",
-      text: "Tibby’s World turns the Tibetan alphabet into short, playful exercises. Instead of memorising tables, learners tap, listen and repeat."
+      text: "Tibboe turns the Tibetan alphabet into short, playful exercises. Instead of memorising tables, learners tap, listen and repeat."
     },
     {
       title: "For Kids and Adults",
@@ -17,7 +17,7 @@
 
 <section class="about-page container mt-4">
   <header class="mb-4 text-center">
-    <h1 class="tw-page-title">About Tibby’s World</h1>
+    <h1 class="tw-page-title">About Tibboe</h1>
     <p class="tw-page-subtitle">
       A small, playful web app to help children and beginners explore the Tibetan alphabet.
     </p>
@@ -25,9 +25,9 @@
 
   <div class="row align-items-center mb-5">
     <div class="col-md-6 mb-3 mb-md-0">
-      <h2 class="h4 mb-3">What is Tibby’s World?</h2>
+      <h2 class="h4 mb-3">What is Tibboe?</h2>
       <p>
-        Tibby’s World is a prototype learning environment that focuses on the basics of written Tibetan.
+        Tibboe is a prototype learning environment that focuses on the basics of written Tibetan.
         The goal is to make the alphabet less intimidating and more like a game: tap on a letter, hear
         how it sounds and connect it with a friendly character.
       </p>
@@ -40,9 +40,9 @@
 
     <div class="col-md-6 text-center">
       <img
-        src="/tibby.png"
-        alt="Tibby the dancing yak"
-        class="about-tibby-img"
+        src="/tibboe.png"
+        alt="Tibboe the dancing yak"
+        class="about-tibboe-img"
       />
     </div>
   </div>
@@ -50,8 +50,7 @@
   <section class="mb-5">
     <h2 class="h4 mb-3">Who is it for?</h2>
     <p>
-      Tibby’s World is designed mainly for Tibetan children who grow up outside Tibet and for beginners
-      who have little or no prior knowledge of the script. Parents can explore the alphabet together with
+     Tibboe is designed for beginners who have little or no prior knowledge of the script. Parents can explore the alphabet together with
       their kids, or let them play independently while they keep an eye on the progress.
     </p>
   </section>
@@ -70,12 +69,5 @@
         </div>
       {/each}
     </div>
-  </section>
-
-  <section class="about-footer-note text-muted small">
-    <p class="mb-1">
-      This version of Tibby’s World is a study project and prototype. Features, content and design may
-      change while the concept is being tested and refined.
-    </p>
   </section>
 </section>

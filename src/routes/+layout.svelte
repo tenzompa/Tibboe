@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-color" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Tibby&apos;s World</a>
+    <a class="navbar-brand" href="/">Explore with Tibboe</a>
 
     <button
       class="navbar-toggler"
