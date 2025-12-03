@@ -10,7 +10,7 @@
 </script>
 
 <section class="mt-3">
-  <a class="btn btn-link p-0 mb-3" href="/play/vowels">← Back to all vowels</a>
+  <a class="btn btn-link p-0 mb-3" href="/learn/vowels">← Back to all vowels</a>
 
   <div class="card shadow-sm">
     <div class="card-body">
