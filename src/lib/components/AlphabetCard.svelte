@@ -26,7 +26,7 @@
     {/if}
   </div>
   <div class="card-footer bg-transparent">
-    <a class="btn btn-outline-primary btn-sm" href={`/play/alphabets/${letter._id}`}>
+    <a class="btn btn-outline-primary btn-sm" href={`/learn/alphabets/${letter._id}`}>
       View alphabet
     </a>
   </div>

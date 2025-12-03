@@ -26,7 +26,7 @@
     {/if}
   </div>
   <div class="card-footer bg-transparent">
-    <a class="btn btn-outline-primary btn-sm" href={`/play/vowels/${vowel._id}`}>
+    <a class="btn btn-outline-primary btn-sm" href={`/learn/vowels/${vowel._id}`}>
       View vowel
     </a>
   </div>
