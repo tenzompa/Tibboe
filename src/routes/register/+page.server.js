@@ -12,23 +12,28 @@ export const actions = {
   default: async ({ request, cookies }) => {
     const data = await request.formData();
     const email = data.get("email")?.toString().trim();
+    const username = data.get("username")?.toString().trim();
     const password = data.get("password")?.toString();
     const confirm = data.get("confirm")?.toString();
 
-    if (!email || !password || !confirm) {
-      return fail(400, { error: "Please fill in all fields.", email });
+    if (!email || !username || !password || !confirm) {
+      return fail(400, { error: "Please fill in all fields.", email, username });
+    }
+
+    if (username.length < 3) {
+      return fail(400, { error: "Username must be at least 3 characters.", email, username });
     }
 
     if (password !== confirm) {
-      return fail(400, { error: "Passwords do not match.", email });
+      return fail(400, { error: "Passwords do not match.", email, username });
     }
 
     if (password.length < 6) {
-      return fail(400, { error: "Password must be at least 6 characters.", email });
+      return fail(400, { error: "Password must be at least 6 characters.", email, username });
     }
 
     try {
-      const userId = await db.createUser(email, password);
+      const userId = await db.createUser({ email, username, password });
 
       // set a simple userId cookie (session)
       cookies.set("userId", userId, {
@@ -42,7 +47,8 @@ export const actions = {
     } catch (err) {
       return fail(400, {
         error: err.message || "Could not create account.",
-        email
+        email,
+        username
       });
     }
   }

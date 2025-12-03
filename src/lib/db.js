@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, ObjectId } from "mongodb";
 import { DB_URI } from "$env/static/private";
 
 import bcrypt from "bcryptjs";
@@ -47,6 +47,38 @@ async function getVowels() {
   return vowels;
 }
 
+// Get a single vowel by id
+async function getVowelById(id) {
+  try {
+    const collection = db.collection("vowels");
+    const item = await collection.findOne({ _id: new ObjectId(id) });
+    if (!item) return null;
+    return {
+      ...item,
+      _id: item._id.toString()
+    };
+  } catch (error) {
+    console.log("Error fetching vowel by id:", error.message);
+    return null;
+  }
+}
+
+// Get a single alphabet by id
+async function getAlphabetById(id) {
+  try {
+    const collection = db.collection("alphabets");
+    const item = await collection.findOne({ _id: new ObjectId(id) });
+    if (!item) return null;
+    return {
+      ...item,
+      _id: item._id.toString()
+    };
+  } catch (error) {
+    console.log("Error fetching alphabet by id:", error.message);
+    return null;
+  }
+}
+
 // =======================
 // Users / Authentication (secure with bcrypt)
 // =======================
@@ -64,7 +96,7 @@ async function getUserById(id) {
 }
 
 // Create a new user with hashed password
-async function createUser(email, password) {
+async function createUser({ email, username, password }) {
   const collection = db.collection("users");
 
   const existing = await collection.findOne({ email });
@@ -72,11 +104,17 @@ async function createUser(email, password) {
     throw new Error("User with this email already exists");
   }
 
+  const existingUsername = await collection.findOne({ username });
+  if (existingUsername) {
+    throw new Error("Username already taken");
+  }
+
   // Hash the password with bcrypt
   const passwordHash = await bcrypt.hash(password, 10);
 
   const doc = {
     email,
+    username,
     passwordHash,       // 🔐 we store the hash, not the plain password
     createdAt: new Date()
   };
@@ -97,14 +135,22 @@ async function verifyUser(email, password) {
   return user;
 }
 
+async function deleteUserById(id) {
+  const collection = db.collection("users");
+  await collection.deleteOne({ _id: new ObjectId(id) });
+}
+
 
 
 export default {
   getAlphabets,
+  getAlphabetById,
   getVowels,
+  getVowelById,
   
   getUserByEmail,
   getUserById,
   createUser,
-  verifyUser
+  verifyUser,
+  deleteUserById
 };

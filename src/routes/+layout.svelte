@@ -3,19 +3,21 @@
   import { page } from "$app/stores";
 
   export let data;
-  const user = data?.user;
+  let user;
+  $: user = data?.user;
 
-  const navLinks = [
-    { href: "/play", label: "Play" },
+  let navLinks = [];
+  $: navLinks = [
+    { href: "/learn", label: "Learn" },
+    ...(user ? [{ href: "/challenge", label: "Challenge" }] : []),
     { href: "/about", label: "About" },
-    { href: "/progress", label: "Progress" },
-    //{ href: "/settings", label: "Settings" }
+    { href: "/settings", label: "Settings" }
   ];
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-color" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Explore with Tibboe</a>
+    <a class="navbar-brand" href="/">Tibboe</a>
 
     <button
       class="navbar-toggler"
@@ -44,7 +46,19 @@
           </li>
         {/each}
       </ul>
-      <!-- RIGHT: (empty for now, can add stuff later if you want) -->
+      <div class="d-flex align-items-center gap-2">
+        {#if user}
+          <span class="navbar-text text-white-50 small">
+            Signed in as {user.username ?? user.email}
+          </span>
+          <form method="POST" action="/logout">
+            <button class="btn btn-outline-light btn-sm" type="submit">Log out</button>
+          </form>
+        {:else}
+          <a class="btn btn-outline-light btn-sm" href="/login">Log in</a>
+          <a class="btn btn-light btn-sm" href="/register">Register</a>
+        {/if}
+      </div>
     </div>
   </div>
 </nav>

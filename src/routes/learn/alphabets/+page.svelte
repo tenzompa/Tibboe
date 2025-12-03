@@ -1,4 +1,6 @@
 <script>
+  import AlphabetCard from "$lib/components/AlphabetCard.svelte";
+
   export let data;
   const letters = data.alphabets ?? [];
 </script>
@@ -15,18 +17,11 @@
     <div class="row mt-3">
       {#each letters as letter}
         <div class="col-6 col-sm-3 mb-3">
-          <div class="card text-center h-100">
-            <div class="card-body">
-              <div class="tw-char-big mb-2">{letter.char}</div>
-              <div class="fw-semibold">{letter.translit}</div>
-              <!--<div class="text-muted small">#{letter.order}</div>-->
-            </div>
-          </div>
+          <AlphabetCard {letter} />
         </div>
       {/each}
     </div>
   {/if}
 </section>
-
 
 

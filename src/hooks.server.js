@@ -9,7 +9,8 @@ export async function handle({ event, resolve }) {
       if (user) {
         event.locals.user = {
           _id: user._id.toString(),
-          email: user.email
+          email: user.email,
+          username: user.username
         };
       } else {
         event.locals.user = null;

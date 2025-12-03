@@ -3,14 +3,14 @@
 </script>
 
 <section class="mt-3">
-  <h1 class="tw-page-title">Play</h1>
+  <h1 class="tw-page-title">Learn</h1>
   <p class="tw-page-subtitle">
     Choose what you want to practice with Tibboe.
   </p>
 
   <div class="row mt-4">
     <div class="col-sm-6 mb-3">
-      <a href="/play/alphabets" class="text-decoration-none tw-card-link">
+      <a href="/learn/alphabets" class="text-decoration-none tw-card-link">
         <div class="card h-100">
           <div class="card-body">
             <h2 class="h4 card-title">Alphabets</h2>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="col-sm-6 mb-3">
-      <a href="/play/vowels" class="text-decoration-none tw-card-link">
+      <a href="/learn/vowels" class="text-decoration-none tw-card-link">
         <div class="card h-100">
           <div class="card-body">
             <h2 class="h4 card-title">Vowels</h2>

@@ -1,9 +1,19 @@
 <script>
   import { onMount } from "svelte";
 
+  export let data;
+  const user = data?.user;
+
   // prototype state – not persisted yet
   let theme = "light"; // "light" or "dark"
   let soundOn = true;
+
+  function confirmDelete(event) {
+    const ok = window.confirm("This will permanently delete your account. Continue?");
+    if (!ok) {
+      event.preventDefault();
+    }
+  }
 
   // apply theme to <body> so it affects whole app
   function applyTheme() {
@@ -80,5 +90,27 @@
       </div>
     </div>
   </div>
+
+  {#if user}
+    <!-- Account -->
+    <div class="card mb-3 shadow-sm border-danger">
+      <div class="card-body">
+        <h2 class="h5 mb-2 text-danger">Account</h2>
+        <p class="small text-muted mb-3">
+          Delete your account and all associated data. This cannot be undone.
+        </p>
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="small text-muted">
+            Signed in as <strong>{user?.username ?? user?.email}</strong>
+          </div>
+          <form method="POST" action="?/delete" on:submit={confirmDelete}>
+            <button type="submit" class="btn btn-outline-danger btn-sm">
+              Delete account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  {/if}
 
 </section>

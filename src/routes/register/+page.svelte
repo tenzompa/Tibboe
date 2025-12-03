@@ -26,6 +26,18 @@
     </div>
 
     <div class="mb-3">
+      <label class="form-label" for="username">Username</label>
+      <input
+        id="username"
+        name="username"
+        type="text"
+        class="form-control"
+        required
+        value={form?.username ?? ""}
+      />
+    </div>
+
+    <div class="mb-3">
       <label class="form-label" for="password">Password</label>
       <input
         id="password"
