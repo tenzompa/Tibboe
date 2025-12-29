@@ -1,5 +1,5 @@
 <script>
-  export let letter;
+  export let alphabet;
 
   function playAudio(src) {
     if (!src) return;
@@ -8,35 +8,35 @@
   }
 </script>
 
-<article class="card tw-letter-card h-100 text-center position-relative">
+<article class="card tw-alphabet-card h-100 text-center position-relative">
   <div class="card-body">
-    <div class="tw-char-big mb-2">{letter.char}</div>
-    <div class="fw-semibold">{letter.translit}</div>
-    {#if letter.order}
-      <div class="text-muted small mt-1">#{letter.order}</div>
+    <div class="tw-char-big mb-2">{alphabet.char}</div>
+    <div class="fw-semibold">{alphabet.translit}</div>
+    {#if alphabet.order}
+      <div class="text-muted small mt-1">#{alphabet.order}</div>
     {/if}
-    {#if letter.audio}
+    {#if alphabet.audio}
       <button
         type="button"
         class="btn btn-outline-secondary btn-sm mt-2"
-        on:click={() => playAudio(letter.audio)}
+        on:click={() => playAudio(alphabet.audio)}
       >
         ▶ Listen
       </button>
     {/if}
   </div>
   <div class="card-footer bg-transparent">
-    <a class="btn btn-outline-primary btn-sm" href={`/learn/alphabets/${letter._id}`}>
+    <a class="btn btn-outline-primary btn-sm" href={`/learn/alphabets/${alphabet._id}`}>
       View alphabet
     </a>
   </div>
 </article>
 
 <style>
-  .tw-letter-card {
+  .tw-alphabet-card {
     transition: transform 150ms ease, box-shadow 150ms ease;
   }
-  .tw-letter-card:hover {
+  .tw-alphabet-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   }

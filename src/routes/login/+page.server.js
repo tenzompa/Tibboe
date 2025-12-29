@@ -27,7 +27,7 @@ export const actions = {
       path: "/",        // MUST be "/" so it works on all routes
       httpOnly: true,
       sameSite: "lax",
-      secure: false     // keep false in dev (true only with HTTPS)
+      secure: process.env.NODE_ENV === "production"
     });
 
     throw redirect(303, "/");

@@ -23,69 +23,108 @@
 <!-- Diese Vorlage ist für eine README.md im Repository gedacht. Abschnitte mit [Optional] können weggelassen werden, wenn in den Übungen nichts anderes verlangt wird. -->
 
 ## 1. Einordnung & Zielsetzung
-Kurz beschreiben, welches Problem adressiert wird und welches Ergebnis angestrebt ist.
-- **Kontext & Problem:** _[1–3 Sätze]_  
-- **Ziele:** _[stichwortartig oder 2–4 Sätze]_  
-- **Abgrenzung [Optional]:** _Was gehört explizit nicht zum Umfang?_
+- **Kontext & Problem:** Tibetisch ist für Einsteiger:innen schwer zugänglich. Viele bestehende Angebote sind textlastig, komplex oder nicht auf Anfänger:innen ausgerichtet. Insbesondere fehlen niedrigschwellige, audiovisuelle Lernangebote, die einen spielerischen Einstieg ermöglichen.
+- **Ziele:** *Tibboe* ist ein webbasiertes Lernprototyp-Konzept, das den Einstieg in die tibetische Sprache durch Audio, einfache Interaktionen und spielerische Übungen erleichtert. Ziel ist es, erste Buchstaben, Vokale und Wörter verständlich und motivierend zu vermitteln.
+- **Abgrenzung:** Der Prototyp fokussiert auf rezeptives Lernen (Hören & Erkennen). Grammatik, Schreiben, Fortschrittstracking oder produktionsreife Backend-Funktionen sind nicht Teil des Projekts.
 
 ## 2. Zielgruppe & Stakeholder
-Wem nützt die Lösung, wer ist beteiligt oder betroffen?
-- **Primäre Zielgruppe:** _[kurz beschreiben]_  
-- **Weitere Stakeholder [Optional]:** _[z. B. Verwaltung, Geschäftsleitung]_  
-- **Annahmen [Optional]:** _[welche Hypothesen werden geprüft?]_
+- **Primäre Zielgruppe:** 
+    - Lernende, die einen ersten Eindruck der Sprache erhalten möchten 
+    - Erwachsene ohne Vorkenntnisse der tibetischen Sprache
+- **Weitere Stakeholder:**
+    - Lehrpersonen oder Kulturvereine 
+    - Familien oder Interessierte aus der tibetischen Diaspora 
+- **Annahmen:**
+    - Audio-gestütztes Lernen erleichtert den Einstieg
+    - Kurze, klare Lernsequenzen erhöhen Motivation 
+    - Ein spielerischer Challenge-Modus unterstützt das Wiederholen
 
 ## 3. Anforderungen & Umfang
-Beschreibt den verbindlichen Umfang gemäss Übungen und allfällige Erweiterungen.
-- **Kernfunktionalität (Mindestumfang):** _gemäss Übungen ab Semesterwoche 8; Workflows kurz nennen und optional illustrieren_  
-- **Akzeptanzkriterien:** _[z. B. „Nutzende können Workflow X von Start bis Abschluss ohne Fehlermeldung durchführen.“]_  
-- **Erweiterungen [Optional]:** _[Liste zusätzlicher Funktionen/Qualitätssprünge, falls umgesetzt]_  
+- **Kernfunktionalität (Mindestumfang):** 
+    - Registrierung, Login und Logout
+    - Lernbereiche für Alphabet, Vokale und Wörter
+        - Übersicht → Detailansicht → Audio abspielen
+    - Challenge-Modus mit Audio und Multiple-Choice-Auswahl
+    - Geschützte Inhalte (Challenge nur für eingeloggte Nutzer:innen)
+- **Akzeptanzkriterien:** 
+    - Alle Inhalte sind ohne Fehlermeldungen zugänglich
+    - Audio kann zuverlässig abgespielt werden
+    - Challenge kann vollständig durchgeführt werden
 
 ## 4. Vorgehen & Artefakte
-Die Durchführung erfolgt phasenbasiert; dokumentieren Sie die wichtigsten Ergebnisse je Phase.
-
 ### 4.1 Understand & Define
-- **Ausgangslage & Ziele:** _[kurz]_
-- **Zielgruppenverständnis:** _[Problemraumanalyse, Recherche]_
-- **Wesentliche Erkenntnisse:** _[Stichpunkte]_
+- **Ausgangslage & Ziele:** Es besteht ein Mangel an einfachen, audiovisuellen Einstiegsangeboten für Tibetisch-Lernende.
+- **Zielgruppenverständnis:**     
+    - Einsteiger:innen benötigen klare Struktur und wenig Text
+    - Audio ist essenziell für das Verständnis der Sprache 
+- **Wesentliche Erkenntnisse:** 
+    - Navigation muss selbsterklärend sein
+    - Feedback und Fehlermeldungen sind wichtig
+    - Kurze Interaktionen sind effektiver als lange Lektionen
 
 ### 4.2 Sketch
-- **Variantenüberblick:** _[kurz]_
-- **Skizzen:** _Mehrere Varianten; Unterschiede kurz dokumentieren._
+- **Variantenüberblick:** 
+    - Lineare Lernabfolge
+    - Grid-basierte Übersichten pro Lernbereich
+    - Challenge als separater Spielmodus
+- **Skizzen:** 
+Es wurden einfache Skizzen (Papier / Low-Fidelity) zur Struktur der Lernbereiche und Navigation erstellt. Sie visualisieren verschiedene Seitenzustände wie Startseite, Lernübersicht, Alphabet-Grid und eine einfache Lernszene mit Audio und Navigation. Der Fokus lag auf einer klaren Struktur, grossen klickbaren Elementen und einer spielerischen Lernabfolge, ohne visuelle Details auszuarbeiten.
+![alt text](skizze.png)
 
 ### 4.3 Decide
-- **Gewählte Variante & Begründung:** _[Entscheidkriterien nennen]_  
-- **End‑to‑End‑Ablauf:** _[kurz beschreiben]_  
-- **Referenz‑Mockup:** _[URL, Screenshots mit kurzen Beschreibungen]_  
+- **Gewählte Variante & Begründung:** Es wurde eine klare, modulare Struktur mit getrennten Lernbereichen (Alphabet, Vokale, Wörter) gewählt. Diese ermöglicht einen schnellen Einstieg und verhindert Überforderung. 
+- **End‑to‑End‑Ablauf:** Startseite → Registrierung/Login → Auswahl Lernbereich → Anhören von Inhalten → Üben im Challenge-Modus → Logout
+- **Referenz‑Mockup:** Das Referenz-Mockup zeigt die visuelle Richtung des finalen Prototyps. Es dient als Orientierung für Farbstimmung, Figuren-Einsatz (Maskottchen) und Startseiten-Layout. Die reduzierte Navigation, die zentrale Figur und der klare Call-to-Action („Start Learning“) unterstützen einen freundlichen, einladenden Einstieg und wurden als Grundlage für die Umsetzung gewählt. (https://www.figma.com/proto/QqmOoRoi2ev4FRmBW6TrKS/Prototyping?node-id=6-9&t=mPQl5w7Hr1LfUpIx-1&starting-point-node-id=6%3A9) ![alt text](mockup.png)
 
 ### 4.4 Prototype
-- **Kernfunktionalität:** _[Kurzbeschreibung der Workflows/Funktionen]_  
-- **Deployment:** _[URL]_  
+- **Kernfunktionalität:** Der Prototyp erlaubt das Anhören und Erkennen tibetischer Zeichen und Wörter sowie deren spielerische Wiederholung in einer Challenge.
+- **Deployment:** (https://tibboe.netlify.app)
 
 #### 4.4.1. Entwurf (Design)
-Beschreibt die Gestaltung und Interaktion.
-> **Hinweis:** Hier wird der **Prototyp** beschrieben, nicht das **Mockup**.
-- **Informationsarchitektur:** _[z. B. Seiten/Navigation: Konzept, nicht die technische Umsetzung]_
-- **Oberflächenentwürfe:** _[wichtige Screens: Screenshots mit kurzer Erläuterung]_  
-- **Designentscheidungen:** _[zentrale Entscheidungen und Begründungen]_
+- **Informationsarchitektur:** Startseite → Login / Registrierung → Lernbereiche → Detailseiten → Challenge → Account / Logout
+- **Oberflächenentwürfe:** Grosse klickbare Elemente, reduzierte Texte, klare Audio-Controls und konsistente Navigation.
+- **Designentscheidungen:** 
+    - Fokus auf Einfachheit
+    - Gute Lesbarkeit und klare Hierarchie
+    - Spielerischer Charakter statt klassischer Lernplattform
 
 #### 4.4.2. Umsetzung (Technik)
-Fasst die technische Realisierung zusammen.
-- **Technologie‑Stack:** _[SvelteKit, Bibliotheken falls genutzt]_
-- **Tooling:** _[IDE/Erweiterungen, lokale/Cloud‑Tools; den Einsatz von KI beschreiben Sie im Kapitel **KI-Deklaration**]_  
-- **Struktur & Komponenten:** _[Seiten, Routen, State/Stores, wichtige Komponenten]_
-- **Daten & Schnittstellen [Optional]:** _[Datenquellen, API‑Entwürfe, Modelle]_
-- **Besondere Entscheidungen:** _[z. B. Trade‑offs, Vereinfachungen]_  
+- **Technologie‑Stack:** 
+    - SvelteKit
+    - MongoDB
+    - HTML / CSS / JavaScript
+    - Bootstrap
+- **Tooling:** 
+    - Visual Studio Code
+    - GitHub
+    - Netlify 
+- **Struktur & Komponenten:** 
+    - Routenbasierte Seitenstruktur
+    - Wiederverwendbare Komponenten für Lernkarten
+    - Zentrale Audio-Normalisierung zur Reduktion von Code-Duplikation
+- **Besondere Entscheidungen:** 
+    - Accessibility-Verbesserungen (korrekte Label-Zuordnung)
 
 ### 4.5 Validate
-- **URL der getesteten Version** (separat deployt)
-- **Ziele der Prüfung:** _[welche Fragen sollen beantwortet werden?]_  
-- **Vorgehen:** _[moderiert/unmoderiert; remote/on‑site]_  
-- **Stichprobe:** _[Mit wem wurde getestet? Profil; Anzahl]_  
-- **Aufgaben/Szenarien:** _[Ausformulierte Testaufgaben]_  
-- **Kennzahlen & Beobachtungen:** _[z. B. Erfolgsquote, Zeitbedarf, qualitative Findings]_  
-- **Zusammenfassung der Resultate:** _[Wichtigste Erkenntnisse; 2–4 Sätze]_  
-- **Abgeleitete Verbesserungen:** _[priorisiert, kurz begründet]_  
-- **Umgesetzte Anpassungen [Optional]:** _[Im Prototyp umgesetzte Verbesserungen aufgrund der Erkenntnisse in der Evaluation]_ Idealerweise: Zwischenstände separat deployen, Änderungen dokumentieren.
+- **URL der getesteten Version** (https://tibboe.netlify.app)
+- **Ziele der Prüfung:** Überprüfung der Verständlichkeit und Durchführbarkeit der zentralen Workflows.
+- **Vorgehen:** Moderierte Usability-Tests (remote) mit Think-Aloud-Methode.
+- **Stichprobe:** 3 Testpersonen ohne Vorkenntnisse der tibetischen Sprache.
+- **Aufgaben/Szenarien:** 
+    - Account erstellen und einloggen
+    - Alphabet-Lernbereich öffnen und Audio abspielen
+    - Einen Vokal öffnen und anhören
+    - Ein Wort öffnen und anhören
+    - Challenge starten und mehrere Aufgaben lösen
+- **Kennzahlen & Beobachtungen:** 
+    - Alle Aufgaben konnten erfolgreich durchgeführt werden
+    - Kleine Unsicherheiten bei Feedback und Orientierung
+    - Formularbeschriftungen waren nicht immer eindeutig
+- **Zusammenfassung der Resultate:** Die Anwendung wurde als verständlich und motivierend wahrgenommen. Die Kernfunktionalität funktionierte zuverlässig.
+- **Abgeleitete Verbesserungen:** 
+    - Ergänzung von Empty- und Error-States
+    - Verbesserung der Accessibility in Formularen
+    - Vereinheitlichung der Audio-Logik
 
 ## 5. Erweiterungen [Optional]
 Dokumentiert Erweiterungen über den Mindestumfang hinaus.
@@ -100,22 +139,22 @@ Beispiele:
 - **Commit‑Praxis:** _[z. B. sprechende Commits]_
 
 ## 7. KI‑Deklaration
-Die folgende Deklaration ist verpflichtend und beschreibt den Einsatz von KI im Projekt.
-
 ### Eingesetzte KI‑Werkzeuge
-_[z. B. Copilot, ChatGPT, Claude, lokale Modelle; Version/Variante wenn bekannt]_
+- ChatGPT (OpenAI)
 
 ### Zweck & Umfang
-_[**wie, wofür und in welchem Ausmass** wurde KI eingesetzt (z. B. Textentwürfe, Codevorschläge, Tests, Refactoring) sowie **Überlegungen** zu Qualität, Urheberrecht/Quellen und Prompt‑Vorgehen]_
+- Unterstützung bei Refactoring, Debugging, Accessibility-Verbesserungen sowie bei der Strukturierung der Dokumentation.
 
 ### Art der Beiträge
-_[konkret: welche Teile stammen (ganz/teilweise) aus KI‑Unterstützung?]_
+- Code-Vorschläge und Verbesserungen
+- Hilfe bei Fehleranalyse
+- Textentwürfe für Dokumentation_
 
 ### Eigene Leistung (Abgrenzung)
-_[was ist eigenständig erarbeitet/überarbeitet worden?]_
+- Konzept, Design, Implementierung, Usability-Tests und finale Entscheidungen wurden eigenständig umgesetzt.
 
 ### Reflexion
-_[Nutzen, Grenzen, Risiken/Qualitätssicherung]_
+- KI beschleunigte den Entwicklungsprozess, erforderte jedoch stets kritische Überprüfung und Anpassung.
 
 ### Prompt‑Vorgehen [Optional]
 _[wichtige Prompts/Workflows in Kürze]_

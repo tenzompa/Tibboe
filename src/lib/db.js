@@ -1,12 +1,11 @@
 import { MongoClient, ObjectId } from "mongodb";
 import { DB_URI } from "$env/static/private";
-
 import bcrypt from "bcryptjs";
 
 const client = new MongoClient(DB_URI);
 
 await client.connect();
-const db = client.db("Tibby"); // your DB name in Compass
+const db = client.db("Tibboe"); // your DB name in Compass
 
 // Get ALL alphabets (consonants)
 async function getAlphabets() {
@@ -26,6 +25,22 @@ async function getAlphabets() {
     console.log("Error fetching alphabets:", error.message);
   }
   return alphabets;
+}
+
+// Get a single alphabet by id
+async function getAlphabetById(id) {
+  try {
+    const collection = db.collection("alphabets");
+    const item = await collection.findOne({ _id: new ObjectId(id) });
+    if (!item) return null;
+    return {
+      ...item,
+      _id: item._id.toString()
+    };
+  } catch (error) {
+    console.log("Error fetching alphabet by id:", error.message);
+    return null;
+  }
 }
 
 // Get ALL vowels
@@ -63,18 +78,42 @@ async function getVowelById(id) {
   }
 }
 
-// Get a single alphabet by id
-async function getAlphabetById(id) {
+// Get ALL words
+async function getWords() {
+  let words = [];
   try {
-    const collection = db.collection("alphabets");
-    const item = await collection.findOne({ _id: new ObjectId(id) });
+    const collection = db.collection("words");
+    const query = {};
+
+    words = await collection.find(query).sort({ order: 1 }).toArray();
+
+    // keep _id as string too (even if you don’t use it, it avoids surprises)
+    words = words.map((item) => ({
+      ...item,
+      _id: item._id?.toString?.() ?? item._id
+    }));
+  } catch (error) {
+    console.log("Error fetching words:", error.message);
+  }
+  return words;
+}
+
+// Get a single word by its string id (e.g. "amala", "bu-mo")
+async function getWordById(wordId) {
+  try {
+    const collection = db.collection("words");
+
+    // Route uses /learn/words/[word_id] where word_id = word.id
+    const item = await collection.findOne({ id: wordId });
+
     if (!item) return null;
+
     return {
       ...item,
-      _id: item._id.toString()
+      _id: item._id?.toString?.() ?? item._id
     };
   } catch (error) {
-    console.log("Error fetching alphabet by id:", error.message);
+    console.log("Error fetching word by id:", error.message);
     return null;
   }
 }
@@ -115,7 +154,7 @@ async function createUser({ email, username, password }) {
   const doc = {
     email,
     username,
-    passwordHash,       // 🔐 we store the hash, not the plain password
+    passwordHash, // 🔐 store hash
     createdAt: new Date()
   };
 
@@ -140,14 +179,16 @@ async function deleteUserById(id) {
   await collection.deleteOne({ _id: new ObjectId(id) });
 }
 
-
-
 export default {
   getAlphabets,
   getAlphabetById,
   getVowels,
   getVowelById,
-  
+
+  // NEW
+  getWords,
+  getWordById,
+
   getUserByEmail,
   getUserById,
   createUser,

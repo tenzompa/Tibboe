@@ -2,7 +2,7 @@
   import AlphabetCard from "$lib/components/AlphabetCard.svelte";
 
   export let data;
-  const letters = data.alphabets ?? [];
+  const alphabets = data.alphabets ?? [];
 </script>
 
 <section class="mt-3">
@@ -11,17 +11,16 @@
     Tibetan consonants.
   </p>
 
-  {#if letters.length === 0}
-    <p>No letters found in the database.</p>
+  {#if alphabets.length === 0}
+    <p>No alphabets found in the database.</p>
   {:else}
     <div class="row mt-3">
-      {#each letters as letter}
+      {#each alphabets as alphabet}
         <div class="col-6 col-sm-3 mb-3">
-          <AlphabetCard {letter} />
+          <AlphabetCard {alphabet} />
         </div>
       {/each}
     </div>
   {/if}
 </section>
-
 

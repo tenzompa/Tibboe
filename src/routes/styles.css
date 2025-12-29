@@ -1,3 +1,13 @@
+/* light theme = day */
+body.light-theme::before {
+  background-image: url("/image/mascot/day.png");
+}
+
+/* dark theme = night */
+body.dark-theme::before {
+  background-image: url("/image/mascot/night.png");
+}
+
 body {
   position: relative;
   color: rgb(0, 0, 0);
@@ -7,17 +17,21 @@ body {
   min-height: 100vh;
 }
 
-/* Desaturate meadow background without affecting page content */
+/* Background layer — BUT NO MORE HARDCODED day.png */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("/meadow.png") center center / cover no-repeat fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   filter: saturate(0.6);
   opacity: 0.65;
   z-index: -1;
   pointer-events: none;
 }
+
 
 .home-center {
   display: flex;
@@ -108,10 +122,22 @@ h1 {
 }
 
 .tw-char-big {
-  font-size: clamp(48px, 8vw, 76px);
+  font-size: clamp(48px, 5vw, 72px); /* smaller + safer */
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.15;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  max-width: 100%;
+
+  cursor: pointer;
+  user-select: none;
 }
+
+
 
 .home-center .lead {
   font-weight: 800;

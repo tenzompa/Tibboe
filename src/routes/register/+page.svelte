@@ -1,71 +1,72 @@
 <script>
-  export let form;
+  export let data;
 </script>
 
-<section class="container mt-4" style="max-width: 480px;">
-  <h1 class="tw-page-title text-center mb-3">Create an Account</h1>
-  <p class="tw-page-subtitle text-center mb-4">
-    Save your progress in Tibby’s World.
-  </p>
+<div class="container mt-5" style="max-width: 480px;">
+  <h1 class="mb-4 text-center">Create account</h1>
 
-  {#if form?.error}
-    <div class="alert alert-danger">{form.error}</div>
+  {#if data?.error}
+    <div class="alert alert-danger">
+      {data.error}
+    </div>
   {/if}
 
   <form method="POST">
+    <!-- EMAIL -->
     <div class="mb-3">
-      <label class="form-label" for="email">Email</label>
+      <label for="email" class="form-label">Email</label>
       <input
         id="email"
         name="email"
         type="email"
         class="form-control"
         required
-        value={form?.email ?? ""}
+        value={data?.email ?? ""}
       />
     </div>
 
+    <!-- USERNAME -->
     <div class="mb-3">
-      <label class="form-label" for="username">Username</label>
+      <label for="username" class="form-label">Username</label>
       <input
         id="username"
         name="username"
         type="text"
         class="form-control"
         required
-        value={form?.username ?? ""}
+        minlength="3"
+        value={data?.username ?? ""}
       />
     </div>
 
+    <!-- PASSWORD -->
     <div class="mb-3">
-      <label class="form-label" for="password">Password</label>
+      <label for="password" class="form-label">Password</label>
       <input
         id="password"
         name="password"
         type="password"
         class="form-control"
         required
+        minlength="6"
       />
     </div>
 
-    <div class="mb-3">
-      <label class="form-label" for="confirm">Confirm password</label>
+    <!-- CONFIRM PASSWORD -->
+    <div class="mb-4">
+      <label for="confirm" class="form-label">Confirm password</label>
       <input
         id="confirm"
         name="confirm"
         type="password"
         class="form-control"
         required
+        minlength="6"
       />
     </div>
 
     <button type="submit" class="tw-game-btn w-100">
       Create account
     </button>
-
-    <p class="mt-3 small text-center">
-      Already have an account?
-      <a href="/login">Log in</a>
-    </p>
   </form>
-</section>
+</div>

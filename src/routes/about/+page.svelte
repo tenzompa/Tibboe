@@ -6,7 +6,7 @@
     },
     {
       title: "For Kids and Adults",
-      text: "The interface is simple enough for children, but structured so that parents, heritage learners and beginners can also use it on their own."
+      text: "The interface is simple enough for children, but structured so that parents and beginners can also use it on their own."
     },
     {
       title: "Small Steps, Clear Progress",
@@ -34,13 +34,13 @@
         tap on a letter, hear how it sounds and connect it with a friendly character.
       </p>
       <p>
-        The app is built using SvelteKit and MongoDB as part of a prototyping project.
+        The app is built as a part of a prototyping project.
         It is not a complete language course, but a playful entry point into reading Tibetan letters.
       </p>
     </div>
 
     <div class="col-md-6 text-center">
-      <img src="/tibboe.png" alt="Tibboe the yak" class="tibboe-hero" />
+      <img src="/image/mascot/tibboe.png" alt="Tibboe the yak" class="tibboe-hero" />
     </div>
   </div>
 

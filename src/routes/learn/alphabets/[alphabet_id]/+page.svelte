@@ -19,10 +19,6 @@
         <div>
           <h1 class="tw-page-title mb-1">{alphabet.translit}</h1>
 
-          {#if alphabet.order}
-            <p class="text-muted small mb-2">Order #{alphabet.order}</p>
-          {/if}
-
           <p class="mb-0">
             Practice the consonant <strong>{alphabet.translit}</strong> and listen to its pronunciation.
           </p>
@@ -39,7 +35,6 @@
         </div>
 
         <div class="tw-char-big">{alphabet.char}</div>
-
       </div>
     </div>
   </div>

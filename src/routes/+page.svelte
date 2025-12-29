@@ -11,7 +11,7 @@
   <p>Learn Tibetan with fun and curiosity</p>
 
   <div class="tibboe-wrapper">
-    <img src="/tibboehappy.png" alt="Tibboe the Yak" class="tibboe-hero" />
+    <img src="/image/mascot/tibboehappy.png" alt="Tibboe the Yak" class="tibboe-hero" />
   </div>
 
   <a href="/learn" class="tw-game-btn">

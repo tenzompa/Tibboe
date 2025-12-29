@@ -17,9 +17,7 @@
       <div class="d-flex align-items-center justify-content-between">
         <div class="me-3">
           <h1 class="tw-page-title mb-1">{vowel.translit}</h1>
-          {#if vowel.order}
-            <p class="text-muted small mb-2">Order #{vowel.order}</p>
-          {/if}
+
           <p class="mb-0">
             Practice the vowel <strong>{vowel.translit}</strong> and listen to its sound.
           </p>

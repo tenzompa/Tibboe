@@ -40,10 +40,8 @@ export const actions = {
         path: "/",
         httpOnly: true,
         sameSite: "lax",
-        secure: false // true in production with HTTPS
+        secure: process.env.NODE_ENV === "production"
       });
-
-      throw redirect(303, "/");
     } catch (err) {
       return fail(400, {
         error: err.message || "Could not create account.",
@@ -51,5 +49,7 @@ export const actions = {
         username
       });
     }
+
+    throw redirect(303, "/");
   }
 };

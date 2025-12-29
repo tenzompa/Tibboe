@@ -9,7 +9,9 @@
   </p>
 
   <div class="row mt-4">
-    <div class="col-sm-6 mb-3">
+
+    <!-- Alphabets -->
+    <div class="col-12 mb-3">
       <a href="/learn/alphabets" class="text-decoration-none tw-card-link">
         <div class="card h-100">
           <div class="card-body">
@@ -23,7 +25,8 @@
       </a>
     </div>
 
-    <div class="col-sm-6 mb-3">
+    <!-- Vowels -->
+    <div class="col-12 mb-3">
       <a href="/learn/vowels" class="text-decoration-none tw-card-link">
         <div class="card h-100">
           <div class="card-body">
@@ -36,5 +39,21 @@
         </div>
       </a>
     </div>
+
+    <!-- Words -->
+    <div class="col-12 mb-3">
+      <a href="/learn/words" class="text-decoration-none tw-card-link">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h4 card-title">Words</h2>
+            <p class="card-text">
+              Learn basic Tibetan words with pictures and audio.
+            </p>
+            <span class="tw-game-btn tw-game-btn-small">Go!</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
   </div>
 </section>

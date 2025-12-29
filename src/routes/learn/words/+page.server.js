@@ -2,6 +2,6 @@ import db from "$lib/db.js";
 import { withAudio } from "$lib/audio.js";
 
 export async function load() {
-  const vowels = await db.getVowels();
-  return { vowels: await withAudio("vowel", vowels) };
+  const words = await db.getWords();
+  return { words: await withAudio("word", words) };
 }

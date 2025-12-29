@@ -1,32 +1,33 @@
 <script>
-  export let form;
+  export let data;
 </script>
 
-<section class="container mt-4" style="max-width: 480px;">
-  <h1 class="tw-page-title text-center mb-3">Log In</h1>
-  <p class="tw-page-subtitle text-center mb-4">
-    Continue your journey with Tibby’s World.
-  </p>
+<div class="container mt-5" style="max-width: 420px;">
+  <h1 class="mb-4 text-center">Login</h1>
 
-  {#if form?.error}
-    <div class="alert alert-danger">{form.error}</div>
+  {#if data?.error}
+    <div class="alert alert-danger">
+      {data.error}
+    </div>
   {/if}
 
   <form method="POST">
+    <!-- EMAIL -->
     <div class="mb-3">
-      <label class="form-label" for="email">Email</label>
+      <label for="email" class="form-label">Email</label>
       <input
         id="email"
         name="email"
         type="email"
         class="form-control"
         required
-        value={form?.email ?? ""}
+        value={data?.email ?? ""}
       />
     </div>
 
+    <!-- PASSWORD -->
     <div class="mb-3">
-      <label class="form-label" for="password">Password</label>
+      <label for="password" class="form-label">Password</label>
       <input
         id="password"
         name="password"
@@ -37,12 +38,7 @@
     </div>
 
     <button type="submit" class="tw-game-btn w-100">
-      Log In
+      Log in
     </button>
-
-    <p class="mt-3 small text-center">
-      No account yet?
-      <a href="/register">Create one</a>
-    </p>
   </form>
-</section>
+</div>

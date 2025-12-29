@@ -4,12 +4,18 @@
   // Pools with audio-only items
   const alphabets = (data.alphabets ?? []).filter((item) => item.audio);
   const vowels = (data.vowels ?? []).filter((item) => item.audio);
+  const words = (data.words ?? []).filter((item) => item.audio);
 
   // Easy access to the active pool by mode
   const pools = {
     alphabet: alphabets,
-    vowel: vowels
+    vowel: vowels,
+    word: words
   };
+
+  const defaultMode =
+    ["alphabet", "vowel", "word"].find((key) => pools[key]?.length) ??
+    "alphabet";
 
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
@@ -34,7 +40,7 @@
   };
 
   // UI state for mode, level, question, feedback
-  let mode = alphabets.length ? "alphabet" : "vowel";
+  let mode = defaultMode;
   let level = "1"; // 1 = show translit, 2 = hide translit
   let question = makeQuestion(pools[mode]);
   let feedback = "";
@@ -81,7 +87,7 @@
       <!-- Controls: choose type and level, and play current sound -->
       <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center">
         <div class="d-flex gap-2">
-          <label class="form-label mb-0 me-2 fw-semibold">Challenge</label>
+          <span class="fw-semibold me-2">Challenge</span>
           <div class="btn-group" role="group">
             <button
               class={`btn btn-sm ${mode === "alphabet" ? "btn-primary" : "btn-outline-primary"}`}
@@ -99,11 +105,19 @@
             >
               Vowels
             </button>
+            <button
+              class={`btn btn-sm ${mode === "word" ? "btn-primary" : "btn-outline-primary"}`}
+              type="button"
+              on:click={() => setMode("word")}
+              disabled={!words.length}
+            >
+              Words
+            </button>
           </div>
         </div>
 
         <div class="d-flex gap-2">
-          <label class="form-label mb-0 me-2 fw-semibold">Level</label>
+          <span class="fw-semibold me-2">Level</span>
           <div class="btn-group" role="group">
             <button
               class={`btn btn-sm ${level === "1" ? "btn-secondary" : "btn-outline-secondary"}`}
@@ -140,7 +154,9 @@
         <p class="text-muted small mb-2">
           {mode === "alphabet"
             ? "Hear a consonant and pick the right one."
-            : "Hear a vowel and pick the right one."}
+            : mode === "vowel"
+              ? "Hear a vowel and pick the right one."
+              : "Hear a word and pick the right one."}
         </p>
 
         <div class="d-grid gap-2 mt-2">
