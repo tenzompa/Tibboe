@@ -4,17 +4,19 @@
   // Pools with audio-only items
   const alphabets = (data.alphabets ?? []).filter((item) => item.audio);
   const vowels = (data.vowels ?? []).filter((item) => item.audio);
+  const numbers = (data.numbers ?? []).filter((item) => item.audio);
   const words = (data.words ?? []).filter((item) => item.audio);
 
   // Easy access to the active pool by mode
   const pools = {
     alphabet: alphabets,
     vowel: vowels,
+    number: numbers,
     word: words
   };
 
   const defaultMode =
-    ["alphabet", "vowel", "word"].find((key) => pools[key]?.length) ??
+    ["alphabet", "vowel", "number", "word"].find((key) => pools[key]?.length) ??
     "alphabet";
 
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -105,6 +107,16 @@
             >
               Vowels
             </button>
+
+            <button
+              class={`btn btn-sm ${mode === "number" ? "btn-primary" : "btn-outline-primary"}`}
+              type="button"
+              on:click={() => setMode("number")}
+              disabled={!numbers.length}
+            >
+              Numbers
+            </button>
+
             <button
               class={`btn btn-sm ${mode === "word" ? "btn-primary" : "btn-outline-primary"}`}
               type="button"

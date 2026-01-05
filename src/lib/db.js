@@ -78,6 +78,41 @@ async function getVowelById(id) {
   }
 }
 
+// Get ALL numbers
+async function getNumbers() {
+  let numbers = [];
+  try {
+    const collection = db.collection("numbers");
+    const query = {};
+
+    numbers = await collection.find(query).sort({ order: 1 }).toArray();
+
+    numbers = numbers.map((item) => ({
+      ...item,
+      _id: item._id.toString()
+    }));
+  } catch (error) {
+    console.log("Error fetching numbers:", error.message);
+  }
+  return numbers;
+}
+
+// Get a single number by id
+async function getNumberById(id) {
+  try {
+    const collection = db.collection("numbers");
+    const item = await collection.findOne({ _id: new ObjectId(id) });
+    if (!item) return null;
+    return {
+      ...item,
+      _id: item._id.toString()
+    };
+  } catch (error) {
+    console.log("Error fetching number by id:", error.message);
+    return null;
+  }
+}
+
 // Get ALL words
 async function getWords() {
   let words = [];
@@ -182,10 +217,13 @@ async function deleteUserById(id) {
 export default {
   getAlphabets,
   getAlphabetById,
+
   getVowels,
   getVowelById,
 
-  // NEW
+  getNumbers,
+  getNumberById,
+
   getWords,
   getWordById,
 

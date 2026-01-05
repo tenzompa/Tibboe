@@ -40,6 +40,21 @@
       </a>
     </div>
 
+    <!-- Numbers -->
+    <div class="col-12 mb-3">
+      <a href="/learn/numbers" class="text-decoration-none tw-card-link">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h4 card-title">Numbers</h2>
+            <p class="card-text">
+              Learn Tibetan numbers from 1 to 10 with audio pronunciation.
+            </p>
+            <span class="tw-game-btn tw-game-btn-small">Go!</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
     <!-- Words -->
     <div class="col-12 mb-3">
       <a href="/learn/words" class="text-decoration-none tw-card-link">

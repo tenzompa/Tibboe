@@ -1,4 +1,4 @@
-# Projektdokumentation – [Projekttitel]
+# Projektdokumentation – [Tibboe]
 
 ## Inhaltsverzeichnis
 
@@ -96,7 +96,7 @@ Es wurden einfache Skizzen (Papier / Low-Fidelity) zur Struktur der Lernbereiche
     - Bootstrap
 - **Tooling:** 
     - Visual Studio Code
-    - GitHub
+    - Git / GitHub
     - Netlify 
 - **Struktur & Komponenten:** 
     - Routenbasierte Seitenstruktur
@@ -126,29 +126,58 @@ Es wurden einfache Skizzen (Papier / Low-Fidelity) zur Struktur der Lernbereiche
     - Verbesserung der Accessibility in Formularen
     - Vereinheitlichung der Audio-Logik
 
-## 5. Erweiterungen [Optional]
-Dokumentiert Erweiterungen über den Mindestumfang hinaus.
-- **Beschreibung & Nutzen:** _[Was wurde erweitert? Warum?]_  
-- **Umsetzung in Kürze:** _[Wie wurde es gemacht?]_  
-- **Abgrenzung zum Mindestumfang:** _[klar darstellen]_  
+## 5. Erweiterungen
 
-## 6. Projektorganisation [Optional]
-Beispiele:
-- **Repository & Struktur:** _[Link; kurze Strukturübersicht]_  
-- **Issue‑Management:** _[Vorgehen kurz beschreiben]_  
-- **Commit‑Praxis:** _[z. B. sprechende Commits]_
+**Beschreibung & Nutzen:**  
+- **Benutzerkonto & geschützte Inhalte:**  
+  Registrierung, Login und Logout sowie eine geschützte Challenge-Seite, die nur für eingeloggte Nutzer:innen zugänglich ist.  
+  *Nutzen:* Ermöglicht eine personalisierte Nutzung und verhindert den Zugriff auf Lernspiele ohne Account.
+
+- **Robustheit der Audio-Inhalte:**  
+  Vereinheitlichung und Normalisierung der Audio-Pfade, sodass Inhalte auch bei uneinheitlichen Dateinamen oder Ordnerstrukturen zuverlässig abgespielt werden können.  
+  *Nutzen:* Stabilere Lernexperience und weniger Fehler bei der Audio-Wiedergabe.
+
+- **Usability- und Accessibility-Verbesserungen:**  
+  Korrekte Zuordnung von Formular-Labels sowie die Einführung von Empty- und Error-States bei fehlenden Inhalten.  
+  *Nutzen:* Bessere Verständlichkeit, höhere Zugänglichkeit und weniger Frustration für Nutzende.
+
+**Umsetzung in Kürze:**  
+- **Authentifizierung:** Cookie-basierte Session-Verwaltung mit `hooks.server.js` und MongoDB-gestützter User-Verwaltung inkl. Passwort-Hashing.  
+- **Protected Routes:** Automatischer Redirect auf `/login`, wenn geschützte Inhalte ohne gültige Session aufgerufen werden.  
+- **Audio-Handling:** Zentrale Vereinheitlichung von Audio-Pfaden (z. B. Korrektur von `/words/` zu `/word/`).  
+- **UI/A11y:** Anpassung der Formularstruktur (Labels mit `for/id`) sowie verständliche Hinweise bei leeren oder fehlerhaften Zuständen.
+
+**Abgrenzung zum Mindestumfang:**  
+Der Mindestumfang fordert durchgängige Kern-Workflows. Die genannten Erweiterungen erhöhen gezielt Stabilität, Bedienbarkeit und Robustheit des Prototyps (Qualitätsverbesserungen), ohne zusätzliche komplexe Funktionen einzuführen oder den Mindestumfang zu gefährden.
+
+
+## 6. Projektorganisation
+**Repository & Struktur:**  
+- `src/routes/` – Seiten & Workflows (Login, Register, Learn, Challenge, Settings)  
+- `src/lib/` – Datenzugriff & Hilfslogik (MongoDB, Audio-Handling, Komponenten)  
+- `static/` – Assets (Audio-Dateien, Bilder)  
+- `README.md` – Projektdokumentation inkl. Validate & KI-Deklaration  
+
+**Issue-Management:**  
+Während der Entwicklung wurden Aufgaben und Verbesserungen iterativ umgesetzt. Die Planung erfolgte entlang der Projektphasen (Implementierung, Usability-Verbesserungen, Dokumentation). Kleinere Anpassungen und Bugfixes wurden direkt im Entwicklungsprozess vorgenommen.
+
+**Commit-Praxis:**  
+Commits wurden regelmässig erstellt und beschreiben die jeweils umgesetzten Änderungen. Beispiele:  
+- `first commit`  
+- `update learn page`  
 
 ## 7. KI‑Deklaration
 ### Eingesetzte KI‑Werkzeuge
 - ChatGPT (OpenAI)
 
 ### Zweck & Umfang
-- Unterstützung bei Refactoring, Debugging, Accessibility-Verbesserungen sowie bei der Strukturierung der Dokumentation.
+- KI wurde zur Unterstützung bei Refactoring, Debugging, Accessibility-Verbesserungen sowie bei der sprachlichen und strukturellen Ausarbeitung der Projektdokumentation eingesetzt. Die Vorschläge wurden kritisch geprüft und bei Bedarf angepasst.
+
 
 ### Art der Beiträge
 - Code-Vorschläge und Verbesserungen
 - Hilfe bei Fehleranalyse
-- Textentwürfe für Dokumentation_
+- Textentwürfe für Dokumentation
 
 ### Eigene Leistung (Abgrenzung)
 - Konzept, Design, Implementierung, Usability-Tests und finale Entscheidungen wurden eigenständig umgesetzt.

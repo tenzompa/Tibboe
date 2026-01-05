@@ -1,16 +1,17 @@
 <script>
   const pillars = [
     {
-      title: "Playful Learning",
-      text: "Tibboe turns the Tibetan alphabet into short, playful exercises. Instead of memorising tables, learners tap, listen and repeat."
+    title: "Playful Learning",
+    text: "Tibboe turns Tibetan basics into short, playful exercises. Instead of memorising tables, learners tap, listen and repeat with audio."
+
     },
     {
-      title: "For Kids and Adults",
-      text: "The interface is simple enough for children, but structured so that parents and beginners can also use it on their own."
+      title: "For Beginners",
+      text: "The interface is simple and visual, designed for beginners of all ages. It works well for children learning with parents, but also for adults starting on their own."
     },
     {
-      title: "Small Steps, Clear Progress",
-      text: "Learners start with consonants and vowels and unlock more content step by step. The challenge page lets you test what you’ve already mastered."
+    title: "Learn & Practice",
+    text: "Learners explore alphabets, vowels, numbers (1–10) and basic words, and then practise in the Challenge mode by listening and choosing the correct answer, with or without phonetics. Access to the Challenge requires a user account."
     }
   ];
 </script>
@@ -20,7 +21,7 @@
   <header class="mb-4 text-center">
     <h1 class="tw-page-title">About Tibboe</h1>
     <p class="tw-page-subtitle">
-      A playful web app to help children and beginners explore the Tibetan alphabet.
+      A playful web app to help beginners explore Tibetan letters, sounds, and numbers.
     </p>
   </header>
 
@@ -29,13 +30,13 @@
     <div class="col-md-6 mb-3 mb-md-0">
       <h2 class="h4 mb-3">What is Tibboe?</h2>
       <p>
-        Tibboe is a prototype learning environment that focuses on the basics of written Tibetan.
-        The goal is to make the alphabet less intimidating and more like a game:
-        tap on a letter, hear how it sounds and connect it with a friendly character.
+        Tibboe is a prototype learning environment that focuses on the basics of Tibetan.
+        The goal is to make the script less intimidating and more like a game:
+        tap on an item, hear how it sounds and practise recognition through repetition.
       </p>
       <p>
-        The app is built as a part of a prototyping project.
-        It is not a complete language course, but a playful entry point into reading Tibetan letters.
+        The app is built as part of a prototyping project.
+        It is not a full language course, but a friendly entry point into Tibetan sounds and symbols.
       </p>
     </div>
 
@@ -48,9 +49,9 @@
   <section class="mb-5">
     <h2 class="h4 mb-3">Who is it for?</h2>
     <p>
-      Tibboe is designed for beginners who have little or no prior knowledge of the script.
-      Parents can explore the alphabet together with their kids,
-      or let them play independently while keeping an eye on their progress.
+      Tibboe is designed for beginners with little or no prior knowledge.
+      Children can explore together with parents, and adults can also use it independently.
+      The interface stays simple: clear navigation, large elements, and audio-first learning.
     </p>
   </section>
 
