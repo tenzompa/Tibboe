@@ -2,7 +2,7 @@
 import path from "path";
 import { promises as fs } from "fs";
 
-const cache = new Map(); // kind -> { files:Set<string>, ts:number }
+const cache = new Map(); 
 const TTL_MS = 5 * 60 * 1000;
 
 const toSlug = (value, fallback) =>

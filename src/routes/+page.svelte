@@ -11,16 +11,30 @@
   <p>Learn Tibetan with fun and curiosity</p>
 
   <div class="tibboe-wrapper">
-    <img src="/image/mascot/tibboehappy.png" alt="Tibboe the Yak" class="tibboe-hero" />
+    <img
+      src="/image/mascot/tibboehappy.png"
+      alt="Tibboe the Yak"
+      class="tibboe-hero"
+    />
   </div>
 
-  <a href="/learn" class="tw-game-btn">
-    Start Learning!
-  </a>
+  <a href="/learn" class="tw-game-btn"> Start Learning! </a>
+
+  {#if user}
+    <!-- INVITE VIA EMAIL BUTTON -->
+    <div class="mt-3">
+      <a
+        href="mailto:?subject=Join Tibboe&body=Hey! I’m learning Tibetan with Tibboe and thought you might like it.%0A%0AJoin here: https://tibboe.netlify.app/"
+        class="btn btn-dark fw-bold"
+      >
+        📩 Invite a friend via email
+      </a>
+    </div>
+  {/if}
 
   {#if !user}
-    <p class="mt-3 fw-semibold text-white text-shadow">
-      Register now to challenge what you have learned.
-    </p>
+    <a href="/register" class="register-cta">
+      Ready for a challenge? Register now.
+    </a>
   {/if}
 </div>

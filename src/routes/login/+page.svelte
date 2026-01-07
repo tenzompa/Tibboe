@@ -1,5 +1,6 @@
 <script>
   export let data;
+  export let form;
 </script>
 
 <div class="container mt-5" style="max-width: 420px;">
@@ -37,8 +38,18 @@
       />
     </div>
 
-    <button type="submit" class="tw-game-btn w-100">
-      Log in
-    </button>
+    <!-- ERROR MESSAGE -->
+    {#if form?.error}
+      <div class="alert alert-danger mb-3">
+        {form.error}
+      </div>
+    {/if}
+
+    <button type="submit" class="tw-game-btn w-100"> Log in </button>
+
+    <p style="margin-top: 2rem; text-align: center;">
+      Not registered yet?
+      <a href="/register">Create an account</a>
+    </p>
   </form>
 </div>

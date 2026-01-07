@@ -24,65 +24,75 @@
 
 ## 1. Einordnung & Zielsetzung
 - **Kontext & Problem:** Tibetisch ist für Einsteiger:innen schwer zugänglich. Viele bestehende Angebote sind textlastig, komplex oder nicht auf Anfänger:innen ausgerichtet. Insbesondere fehlen niedrigschwellige, audiovisuelle Lernangebote, die einen spielerischen Einstieg ermöglichen.
-- **Ziele:** *Tibboe* ist ein webbasiertes Lernprototyp-Konzept, das den Einstieg in die tibetische Sprache durch Audio, einfache Interaktionen und spielerische Übungen erleichtert. Ziel ist es, erste Buchstaben, Vokale und Wörter verständlich und motivierend zu vermitteln.
+- **Ziele:** *Tibboe* ist ein webbasiertes Lernprototyp-Konzept, das den Einstieg in die tibetische Sprache durch Audio, einfache Interaktionen und spielerische Übungen erleichtert. Ziel ist es, Buchstaben, Vokale, Zahlen (1–10) und einfache Wörter verständlich und motivierend zu vermitteln.
 - **Abgrenzung:** Der Prototyp fokussiert auf rezeptives Lernen (Hören & Erkennen). Grammatik, Schreiben, Fortschrittstracking oder produktionsreife Backend-Funktionen sind nicht Teil des Projekts.
 
 ## 2. Zielgruppe & Stakeholder
 - **Primäre Zielgruppe:** 
-    - Lernende, die einen ersten Eindruck der Sprache erhalten möchten 
-    - Erwachsene ohne Vorkenntnisse der tibetischen Sprache
+    - Lernende, die einen ersten Eindruck der tibetischen Schrift und Aussprache erhalten möchten
+    - Erwachsene und Kinder ohne Vorkenntnisse
 - **Weitere Stakeholder:**
     - Lehrpersonen oder Kulturvereine 
     - Familien oder Interessierte aus der tibetischen Diaspora 
 - **Annahmen:**
     - Audio-gestütztes Lernen erleichtert den Einstieg
     - Kurze, klare Lernsequenzen erhöhen Motivation 
-    - Ein spielerischer Challenge-Modus unterstützt das Wiederholen
+    - Ein spielerischer Challenge-Modus unterstützt das Wiederholen und Festigen
 
 ## 3. Anforderungen & Umfang
 - **Kernfunktionalität (Mindestumfang):** 
     - Registrierung, Login und Logout
-    - Lernbereiche für Alphabet, Vokale und Wörter
-        - Übersicht → Detailansicht → Audio abspielen
+    - Lernbereiche für:
+        - Alphabet
+        - Vokale
+        - Zahlen (1-10)
+        - Wörter
+    - Struktur: Übersicht → Detailansicht → Audio abspielen
     - Challenge-Modus mit Audio und Multiple-Choice-Auswahl
-    - Geschützte Inhalte (Challenge nur für eingeloggte Nutzer:innen)
+
 - **Akzeptanzkriterien:** 
     - Alle Inhalte sind ohne Fehlermeldungen zugänglich
     - Audio kann zuverlässig abgespielt werden
     - Challenge kann vollständig durchgeführt werden
 
+- **Erweiterungen:** 
+    - Ein-/Ausblenden von Phonetik im Challenge-Modus
+    - Zentrale Audio-Logik zur Erhöhung der Robustheit
+
 ## 4. Vorgehen & Artefakte
 ### 4.1 Understand & Define
-- **Ausgangslage & Ziele:** Es besteht ein Mangel an einfachen, audiovisuellen Einstiegsangeboten für Tibetisch-Lernende.
+- **Ausgangslage & Ziele:** 
+    - Fehlende einfache Einstiegsangebote für Tibetisch-Lernende.
 - **Zielgruppenverständnis:**     
-    - Einsteiger:innen benötigen klare Struktur und wenig Text
-    - Audio ist essenziell für das Verständnis der Sprache 
+    - Einsteiger:innen benötigen klare Navigation, wenig Text und Audio als zentrales Lernmittel.
 - **Wesentliche Erkenntnisse:** 
-    - Navigation muss selbsterklärend sein
-    - Feedback und Fehlermeldungen sind wichtig
+    - Klare Struktur ist entscheidend
+    - Audio muss leicht zugänglich sein
     - Kurze Interaktionen sind effektiver als lange Lektionen
 
 ### 4.2 Sketch
 - **Variantenüberblick:** 
     - Lineare Lernabfolge
-    - Grid-basierte Übersichten pro Lernbereich
-    - Challenge als separater Spielmodus
+    - Grid-basierte Lernübersichten
+    - Separater Challenge-Modus
 - **Skizzen:** 
-Es wurden einfache Skizzen (Papier / Low-Fidelity) zur Struktur der Lernbereiche und Navigation erstellt. Sie visualisieren verschiedene Seitenzustände wie Startseite, Lernübersicht, Alphabet-Grid und eine einfache Lernszene mit Audio und Navigation. Der Fokus lag auf einer klaren Struktur, grossen klickbaren Elementen und einer spielerischen Lernabfolge, ohne visuelle Details auszuarbeiten.
+Es wurden einfache Skizzen (Papier) zur Struktur der Lernbereiche und Navigation erstellt. Sie visualisieren verschiedene Seitenzustände wie Startseite, Lernübersicht, Alphabet-Grid und eine einfache Lernszene mit Audio und Navigation. Der Fokus lag auf einer klaren Struktur, grossen klickbaren Elementen und einer spielerischen Lernabfolge, ohne visuelle Details auszuarbeiten.
 ![alt text](skizze.png)
 
 ### 4.3 Decide
-- **Gewählte Variante & Begründung:** Es wurde eine klare, modulare Struktur mit getrennten Lernbereichen (Alphabet, Vokale, Wörter) gewählt. Diese ermöglicht einen schnellen Einstieg und verhindert Überforderung. 
+- **Gewählte Variante & Begründung:** Eine modulare Struktur mit getrennten Lernbereichen wurde gewählt, um Überforderung zu vermeiden und schrittweises Lernen zu ermöglichen. 
 - **End‑to‑End‑Ablauf:** Startseite → Registrierung/Login → Auswahl Lernbereich → Anhören von Inhalten → Üben im Challenge-Modus → Logout
 - **Referenz‑Mockup:** Das Referenz-Mockup zeigt die visuelle Richtung des finalen Prototyps. Es dient als Orientierung für Farbstimmung, Figuren-Einsatz (Maskottchen) und Startseiten-Layout. Die reduzierte Navigation, die zentrale Figur und der klare Call-to-Action („Start Learning“) unterstützen einen freundlichen, einladenden Einstieg und wurden als Grundlage für die Umsetzung gewählt. (https://www.figma.com/proto/QqmOoRoi2ev4FRmBW6TrKS/Prototyping?node-id=6-9&t=mPQl5w7Hr1LfUpIx-1&starting-point-node-id=6%3A9) ![alt text](mockup.png)
 
 ### 4.4 Prototype
-- **Kernfunktionalität:** Der Prototyp erlaubt das Anhören und Erkennen tibetischer Zeichen und Wörter sowie deren spielerische Wiederholung in einer Challenge.
+- **Kernfunktionalität:** Der Prototyp erlaubt das Anhören und Erkennen tibetischer Zeichen, Zahlen und Wörter sowie deren spielerische Wiederholung im Challenge-Modus.
 - **Deployment:** (https://tibboe.netlify.app)
 
 #### 4.4.1. Entwurf (Design)
-- **Informationsarchitektur:** Startseite → Login / Registrierung → Lernbereiche → Detailseiten → Challenge → Account / Logout
-- **Oberflächenentwürfe:** Grosse klickbare Elemente, reduzierte Texte, klare Audio-Controls und konsistente Navigation.
+- **Informationsarchitektur:** 
+    - Startseite → Login / Registrierung → Lernbereiche → Detailseiten → Challenge → Account / Logout
+- **Oberflächenentwürfe:** 
+    - Grosse klickbare Elemente, reduzierte Texte, klare Audio-Controls und konsistente Navigation.
 - **Designentscheidungen:** 
     - Fokus auf Einfachheit
     - Gute Lesbarkeit und klare Hierarchie
@@ -103,7 +113,7 @@ Es wurden einfache Skizzen (Papier / Low-Fidelity) zur Struktur der Lernbereiche
     - Wiederverwendbare Komponenten für Lernkarten
     - Zentrale Audio-Normalisierung zur Reduktion von Code-Duplikation
 - **Besondere Entscheidungen:** 
-    - Accessibility-Verbesserungen (korrekte Label-Zuordnung)
+    - Accessibility-Verbesserungen (Label-Zuordnung), optionale Phonetik im Challenge-Modus.
 
 ### 4.5 Validate
 - **URL der getesteten Version** (https://tibboe.netlify.app)
@@ -117,9 +127,7 @@ Es wurden einfache Skizzen (Papier / Low-Fidelity) zur Struktur der Lernbereiche
     - Ein Wort öffnen und anhören
     - Challenge starten und mehrere Aufgaben lösen
 - **Kennzahlen & Beobachtungen:** 
-    - Alle Aufgaben konnten erfolgreich durchgeführt werden
-    - Kleine Unsicherheiten bei Feedback und Orientierung
-    - Formularbeschriftungen waren nicht immer eindeutig
+    - Alle Aufgaben wurden erfolgreich abgeschlossen; kleinere Unsicherheiten bei Orientierung.
 - **Zusammenfassung der Resultate:** Die Anwendung wurde als verständlich und motivierend wahrgenommen. Die Kernfunktionalität funktionierte zuverlässig.
 - **Abgeleitete Verbesserungen:** 
     - Ergänzung von Empty- und Error-States
@@ -129,26 +137,29 @@ Es wurden einfache Skizzen (Papier / Low-Fidelity) zur Struktur der Lernbereiche
 ## 5. Erweiterungen
 
 **Beschreibung & Nutzen:**  
+- **Challenge-Modus mit Audio und Multiple-Choice-Auswahl:**  
+  Neben den reinen Lernseiten wurde ein interaktiver Challenge-Modus umgesetzt. Nutzer:innen hören ein Audio (Alphabet, Vokal, Zahl oder Wort) und wählen die passende Antwort aus mehreren Optionen.
+  *Nutzen:* Fördert aktives Wiederholen und Festigen der Inhalte statt nur passivem Konsum. Der spielerische Charakter erhöht Motivation und Lernerfolg.
+  
 - **Benutzerkonto & geschützte Inhalte:**  
   Registrierung, Login und Logout sowie eine geschützte Challenge-Seite, die nur für eingeloggte Nutzer:innen zugänglich ist.  
-  *Nutzen:* Ermöglicht eine personalisierte Nutzung und verhindert den Zugriff auf Lernspiele ohne Account.
+  *Nutzen:* Schafft eine klare Trennung zwischen Erkunden (Lernbereiche) und Üben (Challenge), erhöht die Struktur der Anwendung und simuliert realistische Nutzungsszenarien mit Benutzerkonten.
+
+- **Einladungsfunktion via E-Mail:**
+  Eingeloggte Nutzer:innen können direkt über einen Button eine vorformulierte E-Mail mit Einladungslink zur Plattform versenden.
+  Nutzen: Erleichtert das Teilen der Anwendung, unterstützt organisches Wachstum und eignet sich insbesondere für Usability-Tests und informelles Weiterempfehlen.
 
 - **Robustheit der Audio-Inhalte:**  
   Vereinheitlichung und Normalisierung der Audio-Pfade, sodass Inhalte auch bei uneinheitlichen Dateinamen oder Ordnerstrukturen zuverlässig abgespielt werden können.  
-  *Nutzen:* Stabilere Lernexperience und weniger Fehler bei der Audio-Wiedergabe.
-
-- **Usability- und Accessibility-Verbesserungen:**  
-  Korrekte Zuordnung von Formular-Labels sowie die Einführung von Empty- und Error-States bei fehlenden Inhalten.  
-  *Nutzen:* Bessere Verständlichkeit, höhere Zugänglichkeit und weniger Frustration für Nutzende.
+  *Nutzen:* Stabilere Lernexperience und weniger technische Fehler bei der Audio-Wiedergabe.
 
 **Umsetzung in Kürze:**  
 - **Authentifizierung:** Cookie-basierte Session-Verwaltung mit `hooks.server.js` und MongoDB-gestützter User-Verwaltung inkl. Passwort-Hashing.  
-- **Protected Routes:** Automatischer Redirect auf `/login`, wenn geschützte Inhalte ohne gültige Session aufgerufen werden.  
-- **Audio-Handling:** Zentrale Vereinheitlichung von Audio-Pfaden (z. B. Korrektur von `/words/` zu `/word/`).  
-- **UI/A11y:** Anpassung der Formularstruktur (Labels mit `for/id`) sowie verständliche Hinweise bei leeren oder fehlerhaften Zuständen.
+- **Protected Routes:** Automatischer Redirect auf `/login`, wenn geschützte Inhalte ohne gültige Session aufgerufen werden.
+- **Einladungsfunktion:** Umsetzung über einen mailto:-Link mit vordefiniertem Betreff und Nachrichtentext inkl. direktem Zugriffslink auf die Plattform.
 
 **Abgrenzung zum Mindestumfang:**  
-Der Mindestumfang fordert durchgängige Kern-Workflows. Die genannten Erweiterungen erhöhen gezielt Stabilität, Bedienbarkeit und Robustheit des Prototyps (Qualitätsverbesserungen), ohne zusätzliche komplexe Funktionen einzuführen oder den Mindestumfang zu gefährden.
+Der Mindestumfang verlangt durchgängige Lern- und Übungs-Workflows. Die genannten Erweiterungen gehen darüber hinaus, indem sie den Lernprozess durch aktives Üben (Challenge-Modus), soziale Weiterverbreitung (Einladungsfunktion), Zugriffsbeschränkungen über Benutzerkonten sowie qualitative Verbesserungen in Robustheit, Usability und Accessibility vertiefen, ohne den Prototyp unnötig zu verkomplizieren.
 
 
 ## 6. Projektorganisation
@@ -164,14 +175,15 @@ Während der Entwicklung wurden Aufgaben und Verbesserungen iterativ umgesetzt. 
 **Commit-Praxis:**  
 Commits wurden regelmässig erstellt und beschreiben die jeweils umgesetzten Änderungen. Beispiele:  
 - `first commit`  
-- `update learn page`  
+- `update learn page and error correction`  
+- `add numbers learning section and challenge integration`
 
 ## 7. KI‑Deklaration
 ### Eingesetzte KI‑Werkzeuge
 - ChatGPT (OpenAI)
 
 ### Zweck & Umfang
-- KI wurde zur Unterstützung bei Refactoring, Debugging, Accessibility-Verbesserungen sowie bei der sprachlichen und strukturellen Ausarbeitung der Projektdokumentation eingesetzt. Die Vorschläge wurden kritisch geprüft und bei Bedarf angepasst.
+- KI wurde zur Unterstützung bei Code-Refactoring, Debugging, Accessibility-Verbesserungen sowie bei der sprachlichen und strukturellen Ausarbeitung der Projektdokumentation eingesetzt. Die Vorschläge wurden kritisch geprüft und bei Bedarf angepasst.
 
 
 ### Art der Beiträge
@@ -185,11 +197,6 @@ Commits wurden regelmässig erstellt und beschreiben die jeweils umgesetzten Än
 ### Reflexion
 - KI beschleunigte den Entwicklungsprozess, erforderte jedoch stets kritische Überprüfung und Anpassung.
 
-### Prompt‑Vorgehen [Optional]
-_[wichtige Prompts/Workflows in Kürze]_
-
-### Quellen & Rechte [Optional]
-_[verwendete Vorlagen/Assets/Modelle; Lizenz/Urheberrecht; Zitierweise]_
 
 ## 8. Anhang [Optional]
 Beispiele:

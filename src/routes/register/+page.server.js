@@ -20,6 +20,12 @@ export const actions = {
       return fail(400, { error: "Please fill in all fields.", email, username });
     }
 
+    //email format check 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return fail(400, { error: "Please enter a valid email address.", email, username });
+    }
+
     if (username.length < 3) {
       return fail(400, { error: "Username must be at least 3 characters.", email, username });
     }

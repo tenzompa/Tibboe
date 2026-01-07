@@ -19,8 +19,10 @@
     ["alphabet", "vowel", "number", "word"].find((key) => pools[key]?.length) ??
     "alphabet";
 
+  // Random selection
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
+  // Easy multiple-choice options
   const buildOptions = (pool, correct, max = 4) => {
     const opts = [correct];
     while (opts.length < Math.min(max, pool.length)) {
@@ -43,7 +45,7 @@
 
   // UI state for mode, level, question, feedback
   let mode = defaultMode;
-  let level = "1"; // 1 = show translit, 2 = hide translit
+  let level = "1"; // 1 = show translit, 2 = hide translit (phoenetics)
   let question = makeQuestion(pools[mode]);
   let feedback = "";
 
