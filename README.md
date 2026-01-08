@@ -127,12 +127,15 @@ Es wurden einfache Skizzen (Papier) zur Struktur der Lernbereiche und Navigation
     - Ein Wort öffnen und anhören
     - Challenge starten und mehrere Aufgaben lösen
 - **Kennzahlen & Beobachtungen:** 
-    - Alle Aufgaben wurden erfolgreich abgeschlossen; kleinere Unsicherheiten bei Orientierung.
-- **Zusammenfassung der Resultate:** Die Anwendung wurde als verständlich und motivierend wahrgenommen. Die Kernfunktionalität funktionierte zuverlässig.
+    - Erfolgsquote: 3/3 Testpersonen konnten alle Aufgaben erfolgreich abschliessen
+    - Zeit bis zur ersten erfolgreichen Audio-Wiedergabe: ca. 20–30 Sekunden
+    - Orientierung: 2 von 3 Testpersonen waren beim ersten Einstieg in den Challenge-Modus kurz unsicher
+    - Technische Stabilität: Keine Abbrüche oder Fehler bei Audio-Wiedergabe oder Navigation
+- **Zusammenfassung der Resultate:** Der Prototyp wurde insgesamt als verständlich, motivierend und spielerisch wahrgenommen. Die Lerninhalte konnten ohne Vorkenntnisse erfolgreich genutzt werden. Kleinere Orientierungsprobleme traten primär beim erstmaligen Wechsel vom Lernen zum Challenge-Modus auf.
 - **Abgeleitete Verbesserungen:** 
-    - Ergänzung von Empty- und Error-States
-    - Verbesserung der Accessibility in Formularen
-    - Vereinheitlichung der Audio-Logik
+    - Ergänzung von Error States zur klaren Kommunikation technischer Fehler und ungültiger Zustände
+    - Verbesserung der Accessibility in Formularen (klarere Label-Zuordnung)
+    - Vereinheitlichung der Audio-Logik, um potenzielle Abspielfehler präventiv zu vermeiden
 
 ## 5. Erweiterungen
 
@@ -145,6 +148,10 @@ Es wurden einfache Skizzen (Papier) zur Struktur der Lernbereiche und Navigation
   Registrierung, Login und Logout sowie eine geschützte Challenge-Seite, die nur für eingeloggte Nutzer:innen zugänglich ist.  
   *Nutzen:* Schafft eine klare Trennung zwischen Erkunden (Lernbereiche) und Üben (Challenge), erhöht die Struktur der Anwendung und simuliert realistische Nutzungsszenarien mit Benutzerkonten.
 
+- **Error States:**  
+  Für technische Fehlerzustände (z. B. nicht ladbare Inhalte, ungültige Routen oder fehlende Berechtigungen) wurden klare Rückmeldungen eingeführt.  
+  *Nutzen:* Erhöht Transparenz, reduziert Frustration und verbessert die wahrgenommene Stabilität und Usability des Prototyps.
+
 - **Einladungsfunktion via E-Mail:**
   Eingeloggte Nutzer:innen können direkt über einen Button eine vorformulierte E-Mail mit Einladungslink zur Plattform versenden.
   Nutzen: Erleichtert das Teilen der Anwendung, unterstützt organisches Wachstum und eignet sich insbesondere für Usability-Tests und informelles Weiterempfehlen.
@@ -152,6 +159,8 @@ Es wurden einfache Skizzen (Papier) zur Struktur der Lernbereiche und Navigation
 - **Robustheit der Audio-Inhalte:**  
   Vereinheitlichung und Normalisierung der Audio-Pfade, sodass Inhalte auch bei uneinheitlichen Dateinamen oder Ordnerstrukturen zuverlässig abgespielt werden können.  
   *Nutzen:* Stabilere Lernexperience und weniger technische Fehler bei der Audio-Wiedergabe.
+
+Zusätzlich wurde die Think-Aloud-Methode eingesetzt, um qualitative Einblicke in das mentale Modell der Testpersonen während der Nutzung zu erhalten.
 
 **Umsetzung in Kürze:**  
 - **Authentifizierung:** Cookie-basierte Session-Verwaltung mit `hooks.server.js` und MongoDB-gestützter User-Verwaltung inkl. Passwort-Hashing.  
@@ -173,10 +182,11 @@ Der Mindestumfang verlangt durchgängige Lern- und Übungs-Workflows. Die genann
 Während der Entwicklung wurden Aufgaben und Verbesserungen iterativ umgesetzt. Die Planung erfolgte entlang der Projektphasen (Implementierung, Usability-Verbesserungen, Dokumentation). Kleinere Anpassungen und Bugfixes wurden direkt im Entwicklungsprozess vorgenommen.
 
 **Commit-Praxis:**  
-Commits wurden regelmässig erstellt und beschreiben die jeweils umgesetzten Änderungen. Beispiele:  
+Commits wurden regelmässig erstellt und beschreiben die jeweils umgesetzten Änderungen. Die Commit-Historie folgt einer inkrementellen Entwicklung entlang der Projektphasen. Beispiele:  
 - `first commit`  
 - `update learn page and error correction`  
 - `add numbers learning section and challenge integration`
+- `code clean up and read me documentation changes`
 
 ## 7. KI‑Deklaration
 ### Eingesetzte KI‑Werkzeuge
